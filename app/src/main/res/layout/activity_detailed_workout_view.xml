@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".DetailedWorkoutViewActivity">
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar"
+        tools:layout_editor_absoluteX="28dp"
+        tools:layout_editor_absoluteY="-3dp" />
+
+    <TextView
+        android:id="@+id/tvViewWorkoutName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:textSize="25sp"
+        tools:text="NAME" />
+
+    <TextView
+        android:id="@+id/tvWorkoutProgress"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:text="textView" />
+
+    <ProgressBar
+        android:id="@+id/pbWorkoutProgress"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvDetailedWorkout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        style="@style/RecyclerViewStyle"/>
+
+</LinearLayout>

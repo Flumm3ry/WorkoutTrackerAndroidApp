@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    style="@style/CardStyle">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        style="@style/InnerCardStyle">
+
+        <TextView
+            android:id="@+id/tvExerciseRowName"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.5"
+            android:textSize="45sp"
+            tools:text="NAME" />
+
+        <TextView
+            android:id="@+id/tvExerciseRowReps"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.25"
+            android:textSize="35sp"
+            tools:text="REPS" />
+
+        <TextView
+            android:id="@+id/tvExerciseRowSets"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.25"
+            android:textSize="35sp"
+            tools:text="SETS" />
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

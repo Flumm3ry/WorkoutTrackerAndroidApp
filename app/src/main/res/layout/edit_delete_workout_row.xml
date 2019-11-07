@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    style="@style/CardStyle">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        style="@style/InnerCardStyle">
+
+        <TextView
+            android:id="@+id/tvEditWorkoutname"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="0.6"
+            android:gravity="center_vertical"
+            android:textSize="24sp"
+            tools:text="textView" />
+
+        <Button
+            android:id="@+id/btnEditWorkout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="0.2"
+            android:text="EDIT" />
+
+        <Button
+            android:id="@+id/btnDeleteWorkout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center|clip_vertical"
+            android:layout_weight="0.2"
+            android:gravity="center_vertical"
+            android:text="DELETE" />
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

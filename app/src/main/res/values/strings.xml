@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">WorkoutTracker</string>
+
+    <string name="update_workout">UPDATE WORKOUT</string>
+    <string name="title_activity_tabbed">TabbedActivity</string>
+    <string name="tab_text_1">All Workouts</string>
+    <string name="tab_text_2">Search</string>
+    <string name="setup_message">Performing first time setup…</string>
+</resources>

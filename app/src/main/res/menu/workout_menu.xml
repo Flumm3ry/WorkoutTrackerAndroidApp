@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item android:id="@+id/icShare"
+        android:icon="@drawable/ic_share_icon"
+        android:title="Share Icon"
+        app:showAsAction="ifRoom" />
+
+    <item android:id="@+id/icEdit"
+        android:icon="@drawable/ic_edit_icon"
+        android:title="Edit Icon"
+        app:showAsAction="ifRoom" />
+
+</menu>
