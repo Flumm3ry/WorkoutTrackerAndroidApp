@@ -24,6 +24,7 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import java.lang.ref.WeakReference;
 import java.util.ArrayList;
 
 public class AddEditWorkoutActivity extends AppCompatActivity implements EditExerciseFragment.EditExerciseFragmentListener{
@@ -168,15 +169,15 @@ public class AddEditWorkoutActivity extends AppCompatActivity implements EditExe
 
     public class StoreWorkout extends AsyncTask<Workout, Integer, Integer> {
 
-        private AddEditWorkoutActivity activity;
+        private WeakReference<AddEditWorkoutActivity> activityWeakReference;
 
         public StoreWorkout(AddEditWorkoutActivity activity) {
-            this.activity = activity;
+            this.activityWeakReference = new WeakReference<>(activity);
         }
 
         @Override
         protected Integer doInBackground(Workout... workouts) {
-            SQLiteDatabase database = new WorkoutDBHelper(activity).getWritableDatabase();
+            SQLiteDatabase database = new WorkoutDBHelper(activityWeakReference.get()).getWritableDatabase();
 
             ContentValues cv = new ContentValues();
             cv.put("workout_name", workouts[0].getName());
@@ -199,27 +200,33 @@ public class AddEditWorkoutActivity extends AppCompatActivity implements EditExe
         @Override
         protected void onPostExecute(Integer id) {
             super.onPostExecute(id);
+
+            AddEditWorkoutActivity activity = activityWeakReference.get();
+
+            if (activity == null || activity.isFinishing())
+                return;
+
             activity.workout.setId(id);
             Toast.makeText(activity, "Workout Added", Toast.LENGTH_SHORT).show();
             activity.finish();
         }
     }
 
-    public class UpdateWorkout extends AsyncTask<Workout, Void, Integer> {
+    public static class UpdateWorkout extends AsyncTask<Workout, Void, Integer> {
 
-        private AddEditWorkoutActivity activity;
+        private WeakReference<AddEditWorkoutActivity> activityWeakReference;
 
         public UpdateWorkout(AddEditWorkoutActivity activity) {
-            this.activity = activity;
+            this.activityWeakReference = new WeakReference<>(activity);
         }
 
         @Override
         protected Integer doInBackground(Workout... workouts) {
-            SQLiteDatabase database = new WorkoutDBHelper(activity).getWritableDatabase();
+            SQLiteDatabase database = new WorkoutDBHelper(activityWeakReference.get()).getWritableDatabase();
 
             // delete the existing workout information
-            database.delete("exercises", "workout_id = " + originalId, null);
-            database.delete("workouts", "workout_id = " + originalId, null);
+            database.delete("exercises", "workout_id = " + activityWeakReference.get().originalId, null);
+            database.delete("workouts", "workout_id = " + activityWeakReference.get().originalId, null);
 
             Log.d("GAY", "doInBackground: to delete" + workouts[0].getId());
 
@@ -245,11 +252,16 @@ public class AddEditWorkoutActivity extends AppCompatActivity implements EditExe
         protected void onPostExecute(Integer id) {
             super.onPostExecute(id);
 
+            AddEditWorkoutActivity activity = activityWeakReference.get();
+
+            if (activity == null || activity.isFinishing())
+                return;
+
             activity.workout.setId(id);
 
             Intent returnIntent = new Intent();
-            returnIntent.putExtra("updated_workout", workout);
-            returnIntent.putExtra("index", getIntent().getIntExtra("index", 0));
+            returnIntent.putExtra("updated_workout", activityWeakReference.get().workout);
+            returnIntent.putExtra("index", activityWeakReference.get().getIntent().getIntExtra("index", 0));
 
             activity.setResult(Activity.RESULT_OK, returnIntent);
             Toast.makeText(activity, "Workout Updated", Toast.LENGTH_SHORT).show();

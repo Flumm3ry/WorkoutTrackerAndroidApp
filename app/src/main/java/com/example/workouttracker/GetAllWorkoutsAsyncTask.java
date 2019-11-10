@@ -5,14 +5,15 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.AsyncTask;
 
+import java.lang.ref.WeakReference;
 import java.util.ArrayList;
 
 public class GetAllWorkoutsAsyncTask extends AsyncTask<Void, Integer, ArrayList<Workout>> {
 
-    private Activity activity;
+    private WeakReference<Activity> activityWeakReference;
 
     public GetAllWorkoutsAsyncTask(Activity activity) {
-        this.activity = activity;
+        this.activityWeakReference = new WeakReference<>(activity);
     }
 
     @Override
@@ -24,7 +25,7 @@ public class GetAllWorkoutsAsyncTask extends AsyncTask<Void, Integer, ArrayList<
     protected ArrayList<Workout> doInBackground(Void... voids) {
         ArrayList<Workout> result = new ArrayList<>();
 
-        SQLiteDatabase database = new WorkoutDBHelper(activity).getReadableDatabase();
+        SQLiteDatabase database = new WorkoutDBHelper(activityWeakReference.get()).getReadableDatabase();
 
         Cursor cursor = database.query(
                 "workout_exercise",
@@ -73,6 +74,10 @@ public class GetAllWorkoutsAsyncTask extends AsyncTask<Void, Integer, ArrayList<
     @Override
     protected void onPostExecute(ArrayList<Workout> workouts) {
         super.onPostExecute(workouts);
+        Activity activity = activityWeakReference.get();
+
+        if (activity == null || activity.isFinishing())
+            return;
 
         ((IHasWorkoutList) activity).setWorkouts(workouts);
     }
