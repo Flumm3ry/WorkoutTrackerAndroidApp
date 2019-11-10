@@ -111,12 +111,10 @@ public class AddEditWorkoutActivity extends AppCompatActivity implements EditExe
         if (newWorkout) {
             StoreWorkout myTask = new StoreWorkout(this);
             myTask.execute(workout);
-            Toast.makeText(this, "Workout Added", Toast.LENGTH_SHORT).show();
         }
         else {
             UpdateWorkout myTask = new UpdateWorkout(this);
             myTask.execute(workout);
-            Toast.makeText(this, "Workout Updated", Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -202,6 +200,7 @@ public class AddEditWorkoutActivity extends AppCompatActivity implements EditExe
         protected void onPostExecute(Integer id) {
             super.onPostExecute(id);
             activity.workout.setId(id);
+            Toast.makeText(activity, "Workout Added", Toast.LENGTH_SHORT).show();
             activity.finish();
         }
     }
@@ -253,6 +252,7 @@ public class AddEditWorkoutActivity extends AppCompatActivity implements EditExe
             returnIntent.putExtra("index", getIntent().getIntExtra("index", 0));
 
             activity.setResult(Activity.RESULT_OK, returnIntent);
+            Toast.makeText(activity, "Workout Updated", Toast.LENGTH_SHORT).show();
             activity.finish();
         }
     }
