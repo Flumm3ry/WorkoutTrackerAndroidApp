@@ -65,6 +65,5 @@ public class ChooseEditWorkoutActivity extends AppCompatActivity implements IHas
     public void setWorkouts(ArrayList<Workout> workouts) {
         ((AlterWorkoutRowAdapter) rv.getAdapter()).workouts = workouts;
         rv.getAdapter().notifyDataSetChanged();
-        Log.d("GAY", "setWorkouts: adapter has been set");
     }
 }
