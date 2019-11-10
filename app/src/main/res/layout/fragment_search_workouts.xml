@@ -22,7 +22,7 @@
             android:layout_gravity="center"
             android:layout_weight="0.03"
             android:gravity="center"
-            android:hint="@string/seach_here_hint"
+            android:hint="@string/search_here_hint"
             android:textSize="30sp" />
 
         <androidx.recyclerview.widget.RecyclerView
