@@ -228,8 +228,6 @@ public class AddEditWorkoutActivity extends AppCompatActivity implements EditExe
             database.delete("exercises", "workout_id = " + activityWeakReference.get().originalId, null);
             database.delete("workouts", "workout_id = " + activityWeakReference.get().originalId, null);
 
-            Log.d("GAY", "doInBackground: to delete" + workouts[0].getId());
-
             ContentValues cv = new ContentValues();
             cv.put("workout_name", workouts[0].getName());
             cv.put("workout_time", workouts[0].getTime());

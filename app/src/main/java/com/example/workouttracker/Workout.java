@@ -13,6 +13,12 @@ public class Workout implements Parcelable{
     private int time;
     private ArrayList<Exercise> exercises;
 
+    public Workout(String name, int time) {
+        this.name = name;
+        this.time = time;
+        this.exercises = new ArrayList<>();
+    }
+
     public Workout(String name, int time, ArrayList<Exercise> exercises) {
         this.name = name;
         this.time = time;
@@ -34,7 +40,7 @@ public class Workout implements Parcelable{
     }
 
     public void addExercise(Exercise e) {
-        exercises.add(e);
+        this.exercises.add(e);
     }
 
     public String getName() {
