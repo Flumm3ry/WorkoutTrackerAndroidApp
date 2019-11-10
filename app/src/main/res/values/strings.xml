@@ -15,7 +15,7 @@
     <string name="exercise_name_hint">Exercise Name</string>
     <string name="reps_hint">Reps</string>
     <string name="sets_hint">Sets</string>
-    <string name="search_here_hint">Search here...</string>
+    <string name="search_here_hint">Search here…</string>
     <string name="share_icon">Share Icon</string>
     <string name="edit_icon">Edit Icon</string>
 </resources>
