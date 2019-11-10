@@ -1,10 +1,12 @@
 package com.example.workouttracker;
 
 import android.app.Activity;
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.ProgressBar;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -17,6 +19,15 @@ import java.util.ArrayList;
 public class ChooseEditWorkoutActivity extends AppCompatActivity implements IHasWorkoutList{
 
     RecyclerView rv;
+    private ProgressDialog progressDialog;
+
+    public ProgressDialog getProgressDialog() {
+        return progressDialog;
+    }
+
+    public void setProgressDialog(ProgressDialog progressDialog) {
+        this.progressDialog = progressDialog;
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

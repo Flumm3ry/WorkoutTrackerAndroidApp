@@ -1,5 +1,6 @@
 package com.example.workouttracker;
 
+import android.app.ProgressDialog;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.text.Editable;
@@ -65,6 +66,16 @@ public class SearchWorkoutsFragment extends Fragment implements IHasWorkoutList{
         this.workouts = workouts;
         SetupAutocomplete setupAutocomplete = new SetupAutocomplete(this);
         setupAutocomplete.execute(workouts);
+    }
+
+    @Override
+    public ProgressDialog getProgressDialog() {
+        return null;
+    }
+
+    @Override
+    public void setProgressDialog(ProgressDialog progressDialog) {
+
     }
 
     public static class SetupAutocomplete extends AsyncTask<ArrayList<Workout>, Void, String[]> {

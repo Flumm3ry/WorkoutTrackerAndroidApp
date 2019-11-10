@@ -1,5 +1,6 @@
 package com.example.workouttracker;
 
+import android.app.ProgressDialog;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 
@@ -16,6 +17,16 @@ import java.util.ArrayList;
 public class TabbedActivity extends AppCompatActivity implements IHasWorkoutList{
 
     SectionsPagerAdapter sectionsPagerAdapter;
+
+    private ProgressDialog progressDialog;
+
+    public ProgressDialog getProgressDialog() {
+        return progressDialog;
+    }
+
+    public void setProgressDialog(ProgressDialog progressDialog) {
+        this.progressDialog = progressDialog;
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

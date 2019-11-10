@@ -1,6 +1,7 @@
 package com.example.workouttracker;
 
 
+import android.app.ProgressDialog;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -39,5 +40,14 @@ public class AllWorkoutsFragment extends Fragment implements IHasWorkoutList{
     public void setWorkouts(ArrayList<Workout> workouts) {
         ((WorkoutViewAdapter) rv.getAdapter()).workouts = workouts;
         rv.getAdapter().notifyDataSetChanged();
+    }
+
+    @Override
+    public ProgressDialog getProgressDialog() {
+        return null;
+    }
+
+    @Override
+    public void setProgressDialog(ProgressDialog progressDialog) {
     }
 }

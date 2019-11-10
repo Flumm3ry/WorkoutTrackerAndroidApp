@@ -1,6 +1,7 @@
 package com.example.workouttracker;
 
 import android.app.Activity;
+import android.app.ProgressDialog;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.AsyncTask;
@@ -19,6 +20,18 @@ public class GetAllWorkoutsAsyncTask extends AsyncTask<Void, Integer, ArrayList<
     @Override
     protected void onPreExecute() {
         super.onPreExecute();
+
+        Activity activity = activityWeakReference.get();
+
+        if (activity == null || activity.isFinishing())
+            return;
+
+        IHasWorkoutList dialogHolder = (IHasWorkoutList) activity;
+
+        dialogHolder.setProgressDialog(new ProgressDialog(activity));
+        dialogHolder.getProgressDialog().setMessage(activity.getString(R.string.fetching_workouts_progress));
+        dialogHolder.getProgressDialog().setCancelable(false);
+        dialogHolder.getProgressDialog().show();
     }
 
     @Override
@@ -79,6 +92,10 @@ public class GetAllWorkoutsAsyncTask extends AsyncTask<Void, Integer, ArrayList<
         if (activity == null || activity.isFinishing())
             return;
 
-        ((IHasWorkoutList) activity).setWorkouts(workouts);
+        IHasWorkoutList myActivity = (IHasWorkoutList) activity;
+
+        myActivity.setWorkouts(workouts);
+
+        myActivity.getProgressDialog().dismiss();
     }
 }
