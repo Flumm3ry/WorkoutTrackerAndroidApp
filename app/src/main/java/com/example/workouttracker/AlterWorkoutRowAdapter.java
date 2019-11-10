@@ -55,7 +55,7 @@ public class AlterWorkoutRowAdapter extends RecyclerView.Adapter<AlterWorkoutRow
                     listener.onEdit(view.getContext(), this.getLayoutPosition());
                     break;
                 case R.id.btnDeleteWorkout:
-                    createDeletConfirmDialog(view.getContext(), this.getLayoutPosition());
+                    createDeleteConfirmDialog(view.getContext(), this.getLayoutPosition());
                     break;
                 default:
                     break;
@@ -67,7 +67,7 @@ public class AlterWorkoutRowAdapter extends RecyclerView.Adapter<AlterWorkoutRow
             void onDelete(Context c, int i);
         }
 
-        private void createDeletConfirmDialog(final Context c, final int pos) {
+        private void createDeleteConfirmDialog(final Context c, final int pos) {
             AlertDialog.Builder alertDlg = new AlertDialog.Builder(c);
             alertDlg.setMessage("Are you sure you want to delete this workout?\nThis cannot be undone.");
             alertDlg.setCancelable(false);
