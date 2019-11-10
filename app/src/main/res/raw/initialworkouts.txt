@@ -1,10 +1,30 @@
-Name1,1
+Chiseled Chest,25
+4
+Bench Press,10,3
+Incline Press,10,3
+Chest Fly,10,3
+Push-ups,50,1
+Broad Back,30
+4
+Cable Row,10,3
+Lat Pulldown,10,4
+Machine Row,10,3
+Dumbbell Row,10,3
+Shady Shoulders,20
 3
-Execrice1,1,2
-Execrice2,3,4
-Execrice3,5,6
-Name2,2
+Military Press,10,3
+Dumbbell Flys,10,3
+Front Raises,10,3
+Luscious Legs,45
 3
-Execrice11,11,21
-Execrice21,31,41
-Execrice31,51,61
+Leg Press,10,3
+Leg Curl,10,3
+Leg Extension,10,3
+Big Biceps,15
+2
+Barbell Curl,10,3
+Dumbbell Curl,10,4
+Terrific Triceps,15
+2
+Tricep Dips,10,3
+Rope Pulldowns,12,3
