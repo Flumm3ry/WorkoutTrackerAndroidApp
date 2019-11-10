@@ -4,12 +4,12 @@
 
     <item android:id="@+id/icShare"
         android:icon="@drawable/ic_share_icon"
-        android:title="Share Icon"
+        android:title="@string/share_icon"
         app:showAsAction="ifRoom" />
 
     <item android:id="@+id/icEdit"
         android:icon="@drawable/ic_edit_icon"
-        android:title="Edit Icon"
+        android:title="@string/edit_icon"
         app:showAsAction="ifRoom" />
 
 </menu>

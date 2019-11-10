@@ -11,8 +11,9 @@
         android:layout_height="wrap_content"
         android:layout_weight="0.4"
         android:ems="10"
-        android:hint="Excercise Name"
-        android:inputType="textPersonName" />
+        android:hint="@string/excercise_name_hint"
+        android:inputType="textPersonName"
+        android:importantForAutofill="no" tools:targetApi="o" />
 
     <EditText
         android:id="@+id/etReps"
@@ -20,8 +21,9 @@
         android:layout_height="wrap_content"
         android:layout_weight="0.1"
         android:ems="10"
-        android:hint="Reps"
-        android:inputType="number" />
+        android:hint="@string/reps_hint"
+        android:inputType="number"
+        android:importantForAutofill="no" tools:targetApi="o"/>
 
     <TextView
         android:id="@+id/textView2"
@@ -39,13 +41,14 @@
         android:layout_height="wrap_content"
         android:layout_weight="0.1"
         android:ems="10"
-        android:hint="Sets"
-        android:inputType="number" />
+        android:hint="@string/sets_hint"
+        android:inputType="number"
+        android:importantForAutofill="no" tools:targetApi="o" />
 
     <Button
         android:id="@+id/btnDeleteExercise"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="0.2"
-        android:text="Delete" />
+        android:text="@string/delete" />
 </LinearLayout>

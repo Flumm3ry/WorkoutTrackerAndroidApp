@@ -6,4 +6,16 @@
     <string name="tab_text_1">All Workouts</string>
     <string name="tab_text_2">Search</string>
     <string name="setup_message">Performing first time setup…</string>
+    <string name="find_a_workout_btn">Find a Workout</string>
+    <string name="add_a_workout_btn">Add a workout</string>
+    <string name="customise_your_workouts_btn">Customise your Workouts</string>
+    <string name="welcome_message_main">WELCOME</string>
+    <string name="edit">EDIT</string>
+    <string name="delete">DELETE</string>
+    <string name="excercise_name_hint">Excercise Name</string>
+    <string name="reps_hint">Reps</string>
+    <string name="sets_hint">Sets</string>
+    <string name="seach_here_hint">Seach here...</string>
+    <string name="share_icon">Share Icon</string>
+    <string name="edit_icon">Edit Icon</string>
 </resources>

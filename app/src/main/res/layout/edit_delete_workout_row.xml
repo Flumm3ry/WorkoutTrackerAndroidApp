@@ -27,7 +27,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:layout_weight="0.2"
-            android:text="EDIT" />
+            android:text="@string/edit" />
 
         <Button
             android:id="@+id/btnDeleteWorkout"
@@ -36,7 +36,7 @@
             android:layout_gravity="center|clip_vertical"
             android:layout_weight="0.2"
             android:gravity="center_vertical"
-            android:text="DELETE" />
+            android:text="@string/delete" />
     </LinearLayout>
 
 </androidx.cardview.widget.CardView>
