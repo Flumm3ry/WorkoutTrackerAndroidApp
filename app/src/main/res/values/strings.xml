@@ -12,7 +12,7 @@
     <string name="welcome_message_main">WELCOME</string>
     <string name="edit">EDIT</string>
     <string name="delete">DELETE</string>
-    <string name="excercise_name_hint">Excercise Name</string>
+    <string name="exercise_name_hint">Exercise Name</string>
     <string name="reps_hint">Reps</string>
     <string name="sets_hint">Sets</string>
     <string name="seach_here_hint">Seach here...</string>

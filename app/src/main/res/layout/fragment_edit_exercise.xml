@@ -11,7 +11,7 @@
         android:layout_height="wrap_content"
         android:layout_weight="0.4"
         android:ems="10"
-        android:hint="@string/excercise_name_hint"
+        android:hint="@string/exercise_name_hint"
         android:inputType="textPersonName"
         android:importantForAutofill="no" tools:targetApi="o" />
 
@@ -23,7 +23,7 @@
         android:ems="10"
         android:hint="@string/reps_hint"
         android:inputType="number"
-        android:importantForAutofill="no" tools:targetApi="o"/>
+        android:importantForAutofill="no" tools:targetApi="o" />
 
     <TextView
         android:id="@+id/textView2"
